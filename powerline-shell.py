@@ -211,63 +211,37 @@ class Color(DefaultColor):
     pass
 
 
-import os
-
-def add_virtual_env_segment(powerline):
-    env = os.getenv('VIRTUAL_ENV') or os.getenv('CONDA_ENV_PATH')
-    if env is None:
+def add_set_term_title_segment(powerline):
+    term = os.getenv('TERM')
+    if not (('xterm' in term) or ('rxvt' in term)):
         return
 
-    env_name = os.path.basename(env)
-    bg = Color.VIRTUAL_ENV_BG
-    fg = Color.VIRTUAL_ENV_FG
-    powerline.append(' %s ' % env_name, fg, bg)
-
-
-add_virtual_env_segment(powerline)
-
-def add_username_segment(powerline):
-    import os
     if powerline.args.shell == 'bash':
-        user_prompt = ' \\u '
+        set_title = '\\[\\e]0;\\u@\\h: \\w\\a\\]'
     elif powerline.args.shell == 'zsh':
-        user_prompt = ' %n '
+        set_title = '\033]0;%n@%m: %~\007'
     else:
-        user_prompt = ' %s ' % os.getenv('USER')
+        import socket
+        set_title = '\033]0;%s@%s: %s\007' % (os.getenv('USER'), socket.gethostname().split('.')[0], powerline.cwd or os.getenv('PWD'))
 
-    if os.getenv('USER') == 'root':
-        bgcolor = Color.USERNAME_ROOT_BG
+    powerline.append(set_title, None, None, '')
+
+
+
+add_set_term_title_segment(powerline)
+def add_time_segment(powerline):
+    if powerline.args.shell == 'bash':
+        time = ' \\t '
+    elif powerline.args.shell == 'zsh':
+        time = ' %* '
     else:
-        bgcolor = Color.USERNAME_BG
+        import time
+        time = ' %s ' % time.strftime('%H:%M:%S')
 
-    powerline.append(user_prompt, Color.USERNAME_FG, bgcolor)
-
-
-add_username_segment(powerline)
-def add_hostname_segment(powerline):
-    if powerline.args.colorize_hostname:
-        from lib.color_compliment import stringToHashToColorAndOpposite
-        from lib.colortrans import rgb2short
-        from socket import gethostname
-        hostname = gethostname()
-        FG, BG = stringToHashToColorAndOpposite(hostname)
-        FG, BG = (rgb2short(*color) for color in [FG, BG])
-        host_prompt = ' %s ' % hostname.split('.')[0]
-
-        powerline.append(host_prompt, FG, BG)
-    else:
-        if powerline.args.shell == 'bash':
-            host_prompt = ' \\h '
-        elif powerline.args.shell == 'zsh':
-            host_prompt = ' %m '
-        else:
-            import socket
-            host_prompt = ' %s ' % socket.gethostname().split('.')[0]
-
-        powerline.append(host_prompt, Color.HOSTNAME_FG, Color.HOSTNAME_BG)
+    powerline.append(time, Color.HOSTNAME_FG, Color.HOSTNAME_BG)
 
 
-add_hostname_segment(powerline)
+add_time_segment(powerline)
 import os
 
 def add_ssh_segment(powerline):
@@ -499,161 +473,6 @@ def add_git_segment(powerline):
 
 
 add_git_segment(powerline)
-import os
-import subprocess
-
-def get_hg_status():
-    has_modified_files = False
-    has_untracked_files = False
-    has_missing_files = False
-
-    p = subprocess.Popen(['hg', 'status'], stdout=subprocess.PIPE)
-    output = p.communicate()[0].decode("utf-8")
-
-    for line in output.split('\n'):
-        if line == '':
-            continue
-        elif line[0] == '?':
-            has_untracked_files = True
-        elif line[0] == '!':
-            has_missing_files = True
-        else:
-            has_modified_files = True
-    return has_modified_files, has_untracked_files, has_missing_files
-
-def add_hg_segment(powerline):
-    branch = os.popen('hg branch 2> /dev/null').read().rstrip()
-    if len(branch) == 0:
-        return False
-    bg = Color.REPO_CLEAN_BG
-    fg = Color.REPO_CLEAN_FG
-    has_modified_files, has_untracked_files, has_missing_files = get_hg_status()
-    if has_modified_files or has_untracked_files or has_missing_files:
-        bg = Color.REPO_DIRTY_BG
-        fg = Color.REPO_DIRTY_FG
-        extra = ''
-        if has_untracked_files:
-            extra += '+'
-        if has_missing_files:
-            extra += '!'
-        branch += (' ' + extra if extra != '' else '')
-    return powerline.append(' %s ' % branch, fg, bg)
-
-
-add_hg_segment(powerline)
-import subprocess
-
-
-def _add_svn_segment(powerline):
-    is_svn = subprocess.Popen(['svn', 'status'],
-                              stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    is_svn_output = is_svn.communicate()[1].decode("utf-8").strip()
-    if len(is_svn_output) != 0:
-        return
-
-    #"svn status | grep -c "^[ACDIMRX\\!\\~]"
-    p1 = subprocess.Popen(['svn', 'status'], stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE)
-    p2 = subprocess.Popen(['grep', '-c', '^[ACDIMR\\!\\~]'],
-            stdin=p1.stdout, stdout=subprocess.PIPE)
-    output = p2.communicate()[0].decode("utf-8").strip()
-    if len(output) > 0 and int(output) > 0:
-        changes = output.strip()
-        powerline.append(' %s ' % changes, Color.SVN_CHANGES_FG, Color.SVN_CHANGES_BG)
-
-
-def add_svn_segment(powerline):
-    """Wraps _add_svn_segment in exception handling."""
-
-    # FIXME This function was added when introducing a testing framework,
-    # during which the 'powerline' object was passed into the
-    # `add_[segment]_segment` functions instead of being a global variable. At
-    # that time it was unclear whether the below exceptions could actually be
-    # thrown. It would be preferable to find out whether they ever will. If so,
-    # write a comment explaining when. Otherwise remove.
-
-    try:
-        _add_svn_segment(powerline)
-    except OSError:
-        pass
-    except subprocess.CalledProcessError:
-        pass
-
-
-add_svn_segment(powerline)
-import os
-import subprocess
-
-def get_fossil_status():
-    has_modified_files = False
-    has_untracked_files = False
-    has_missing_files = False
-    output = os.popen('fossil changes 2>/dev/null').read().strip()
-    has_untracked_files = True if os.popen("fossil extras 2>/dev/null").read().strip() else False
-    has_missing_files = 'MISSING' in output
-    has_modified_files = 'EDITED' in output
-
-    return has_modified_files, has_untracked_files, has_missing_files
-
-def _add_fossil_segment(powerline):
-    subprocess.Popen(['fossil'], stdout=subprocess.PIPE).communicate()[0]
-    branch = ''.join([i.replace('*','').strip() for i in os.popen("fossil branch 2> /dev/null").read().strip().split("\n") if i.startswith('*')])
-    if len(branch) == 0:
-        return
-
-    bg = Color.REPO_CLEAN_BG
-    fg = Color.REPO_CLEAN_FG
-    has_modified_files, has_untracked_files, has_missing_files = get_fossil_status()
-    if has_modified_files or has_untracked_files or has_missing_files:
-        bg = Color.REPO_DIRTY_BG
-        fg = Color.REPO_DIRTY_FG
-        extra = ''
-        if has_untracked_files:
-            extra += '+'
-        if has_missing_files:
-            extra += '!'
-        branch += (' ' + extra if extra != '' else '')
-    powerline.append(' %s ' % branch, fg, bg)
-
-def add_fossil_segment(powerline):
-    """Wraps _add_fossil_segment in exception handling."""
-
-    # FIXME This function was added when introducing a testing framework,
-    # during which the 'powerline' object was passed into the
-    # `add_[segment]_segment` functions instead of being a global variable. At
-    # that time it was unclear whether the below exceptions could actually be
-    # thrown. It would be preferable to find out whether they ever will. If so,
-    # write a comment explaining when. Otherwise remove.
-
-    try:
-        _add_fossil_segment(powerline)
-    except OSError:
-        pass
-    except subprocess.CalledProcessError:
-        pass
-
-
-add_fossil_segment(powerline)
-import os
-import re
-import subprocess
-
-def add_jobs_segment(powerline):
-    pppid_proc = subprocess.Popen(['ps', '-p', str(os.getppid()), '-oppid='],
-                                  stdout=subprocess.PIPE)
-    pppid = pppid_proc.communicate()[0].decode("utf-8").strip()
-
-    output_proc = subprocess.Popen(['ps', '-a', '-o', 'ppid'],
-                                   stdout=subprocess.PIPE)
-    output = output_proc.communicate()[0].decode("utf-8")
-
-    num_jobs = len(re.findall(str(pppid), output)) - 1
-
-    if num_jobs > 0:
-        powerline.append(' %d ' % num_jobs, Color.JOBS_FG, Color.JOBS_BG)
-
-
-add_jobs_segment(powerline)
 def add_root_segment(powerline):
     root_indicators = {
         'bash': ' \\$ ',
