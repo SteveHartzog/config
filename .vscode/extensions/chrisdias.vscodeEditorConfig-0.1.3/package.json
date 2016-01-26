@@ -1,0 +1,59 @@
+{
+	"__metadata": {
+		"galleryApiUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+		"id": "054fa362-3f97-4f96-ba03-d2cf1e59ecb3",
+		"downloadUrl": "https://chrisdias.gallery.vsassets.io/_apis/public/gallery/publisher/chrisdias/extension/vscodeEditorConfig/0.1.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage?install=true",
+		"publisherId": "4acb74cf-1017-4a3f-b039-7a38ef504322",
+		"publisherDisplayName": "Chris Dias",
+		"date": "2016-01-09T00:33:58.637Z"
+	},
+	"name": "vscodeEditorConfig",
+	"displayName": "Editor Config for VS Code",
+	"description": "Editor Config Support for Visual Studio Code",
+	"publisher": "chrisdias",
+	"version": "0.1.3",
+	"icon": "./EditorConfig_icon.png",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"categories": [
+		"Other"
+	],
+	"homepage": "https://github.com/Microsoft/vscode-editorconfig/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-editorconfig.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-editorconfig/issues"
+	},
+	"galleryBanner": {
+		"color": "#37699A",
+		"theme": "dark"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/src/editorConfigMain",
+	"contributes": {
+		"commands": [
+			{
+				"command": "vscode.generateeditorconfig",
+				"title": "EditorConfig: Generate"
+			}
+		]
+	},
+	"dependencies": {
+		"editorconfig": "0.12.2"
+	},
+	"devDependencies": {
+		"typescript": "^1.6.2",
+		"vscode": "0.10.x"
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+	}
+}

@@ -1,0 +1,40 @@
+2015-12-19T01:18:09.954Z - info: [teams-view-controller.js] - Transitioning to online state
+2015-12-19T01:18:09.956Z - info: [teams-view-controller.js] - Presenting teams
+2015-12-19T01:18:09.957Z - info: [teams-view-controller.js] - No Teams to Present! Showing login dialog
+2015-12-19T01:18:09.957Z - info: [teams-view-controller.js] - Clearing primary team
+2015-12-19T01:18:09.958Z - info: [web-view-ctx.js] - Creating new webView with ID: webView0
+2015-12-19T01:18:09.958Z - info: [web-view-ctx.js] - Creating actual WebView element
+2015-12-19T01:18:09.972Z - info: [web-view-ctx.js] - webView0 hidden
+2015-12-19T01:18:09.972Z - info: [web-view-ctx.js] - webView0 shown
+2015-12-19T01:18:10.063Z - info: [main.js] - Attached to DOM
+2015-12-19T01:18:10.068Z - info: [network-status.coffee] - Checking network connection to Slack...
+2015-12-19T01:18:10.103Z - info: [preferences-handler.js] - Setting runFromTray to true
+2015-12-19T01:18:10.105Z - info: [preferences-handler.js] - Setting useHwAcceleration to true
+2015-12-19T01:18:10.106Z - info: [preferences-handler.js] - Setting windowFlashBehavior to "idle"
+2015-12-19T01:18:10.840Z - info: [teams-view-controller.js] - Transitioning to online state
+2015-12-19T01:18:10.840Z - info: [teams-view-controller.js] - Presenting teams
+2015-12-19T01:18:10.840Z - info: [teams-view-controller.js] - No Teams to Present! Showing login dialog
+2015-12-19T01:18:10.840Z - info: [teams-view-controller.js] - Clearing primary team
+2015-12-19T01:18:42.059Z - warn: [web-view-ctx.js] - Took too long to load, going to issue a refresh
+2015-12-19T01:22:12.343Z - info: [teams-view-controller.js] - Updating! [{"id":"__signin__","team_id":"__signin__","reason":"didSignIn"}]
+2015-12-19T01:22:12.345Z - info: [teams-view-controller.js] - Presenting teams
+2015-12-19T01:22:12.345Z - info: [teams-view-controller.js] - teamList empty, blindly using updatedTeamList
+2015-12-19T01:22:12.347Z - info: [web-view-ctx.js] - Creating new webView with ID: webView1
+2015-12-19T01:22:12.347Z - info: [web-view-ctx.js] - Creating actual WebView element
+2015-12-19T01:22:12.355Z - info: [web-view-ctx.js] - webView1 hidden
+2015-12-19T01:22:12.430Z - info: [teams-view-controller.js] - Created new webView context for __signin__
+2015-12-19T01:22:12.431Z - info: [teams-view-controller.js] - Going to change team to __signin__, original team was null
+2015-12-19T01:22:12.431Z - info: [web-view-ctx.js] - webView1 shown
+2015-12-19T01:22:12.433Z - info: [teams-view-controller.js] - Primary team set to __signin__
+2015-12-19T01:22:12.441Z - info: [team-selector.coffee] - Rebuilding the clicked observable
+2015-12-19T01:22:14.623Z - warn: [theme-helpers.coffee] - Unable to load file:///usr/share/slack/resources/app.asar/static/undefined, falling back to team initials
+2015-12-19T01:22:24.685Z - warn: [theme-helpers.coffee] - Unable to load file:///usr/share/slack/resources/app.asar/static/undefined, falling back to team initials
+2015-12-19T01:22:24.743Z - info: [teams-view-controller.js] - Updating! [{"id":"U02D63ZT7","name":"steve","team_id":"T02D63ZT3","team_name":"Proridium","team_url":"https://proridium.slack.com/"}]
+2015-12-19T01:22:24.744Z - info: [teams-view-controller.js] - Presenting teams
+2015-12-19T01:22:24.746Z - info: [teams-view-controller.js] - Going to change team to T02D63ZT3, original team was __signin__
+2015-12-19T01:22:24.748Z - info: [web-view-ctx.js] - webView1 hidden
+2015-12-19T01:22:24.748Z - info: [web-view-ctx.js] - webView1 shown
+2015-12-19T01:22:24.749Z - info: [teams-view-controller.js] - Primary team set to T02D63ZT3
+2015-12-19T01:22:24.761Z - info: [team-selector.coffee] - Rebuilding the clicked observable
+2015-12-19T01:22:24.783Z - warn: [theme-helpers.coffee] - Unable to load file:///usr/share/slack/resources/app.asar/static/undefined, falling back to team initials
+2015-12-19T01:22:24.891Z - warn: [theme-helpers.coffee] - Unable to load file:///usr/share/slack/resources/app.asar/static/undefined, falling back to team initials

@@ -1,0 +1,9 @@
+{
+	"color_scheme": "Packages/Theme - Glacier/glacier.tmTheme",
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Seti_orig.sublime-theme",
+	"typescript_plugin_tsc_version": "1.7.3"
+}

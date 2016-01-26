@@ -1,0 +1,21 @@
+# Ignore Everything, but allow whitelisting to work
+/*
+
+# Whitelist Configs
+!/.gitignore
+!/.bashrc
+!/.bash_login
+
+# Whitelist Directories
+!/.vscode
+/.vscode/*
+!/.nvm
+/.nvm/*
+
+# App configs
+!/.config/Code
+/.config/Code/*
+!/.config/sublime-text-3
+/.config/sublime-text-3/*
+!/.config/Slack
+/.config/Slack/*

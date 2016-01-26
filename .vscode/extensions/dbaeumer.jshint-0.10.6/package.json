@@ -1,0 +1,79 @@
+{
+	"__metadata": {
+		"galleryApiUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+		"id": "82dfe17d-bb64-404e-bcc5-f9803f7ab5d5",
+		"downloadUrl": "https://dbaeumer.gallery.vsassets.io/_apis/public/gallery/publisher/dbaeumer/extension/jshint/0.10.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage?install=true",
+		"publisherId": "29859a75-d81b-4f0e-8578-2c80ecee6f99",
+		"publisherDisplayName": "Dirk Baeumer",
+		"date": "2015-12-17T10:25:52.96Z"
+	},
+	"name": "jshint",
+	"description": "Integrates JSHint into VS Code.",
+	"version": "0.10.6",
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-jshint.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-jshint/issues"
+	},
+	"icon": "jshint_icon.png",
+	"galleryBanner": {
+		"color": "#5c2d91",
+		"theme": "dark"
+	},
+	"categories": [
+		"Linters"
+	],
+	"publisher": "dbaeumer",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:javascriptreact"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "JSHint configuration",
+			"properties": {
+				"jshint.enable": {
+					"type": "boolean",
+					"default": true,
+					"description": "Control whether jshint is enabled for JavaScript files or not."
+				},
+				"jshint.options": {
+					"type": "object",
+					"default": {},
+					"description": "The jshint options object to provide args to the jshint command."
+				}
+			}
+		},
+		"jsonValidation": [
+			{
+				"fileMatch": "jshint.json",
+				"url": "http://json.schemastore.org/grunt-jshint-task"
+			},
+			{
+				"fileMatch": ".jshintrc",
+				"url": "http://json.schemastore.org/jshintrc"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "cd ../jshint-server && npm run compile && cd ../jshint && tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"compile": "tsc -p ./"
+	},
+	"devDependencies": {
+		"vscode": "0.10.x",
+		"typescript": "^1.6.2"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^1.0.2"
+	}
+}

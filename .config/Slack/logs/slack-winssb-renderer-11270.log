@@ -1,0 +1,33 @@
+2016-01-02T20:14:34.652Z - info: [teams-view-controller.js] - Transitioning to online state
+2016-01-02T20:14:34.654Z - info: [teams-view-controller.js] - Presenting teams
+2016-01-02T20:14:34.656Z - info: [web-view-ctx.js] - Creating new webView with ID: webView0
+2016-01-02T20:14:34.656Z - info: [web-view-ctx.js] - Creating actual WebView element
+2016-01-02T20:14:34.678Z - info: [web-view-ctx.js] - webView0 hidden
+2016-01-02T20:14:34.799Z - info: [teams-view-controller.js] - Created new webView context for T02D63ZT3
+2016-01-02T20:14:34.799Z - info: [teams-view-controller.js] - Going to change team to T02D63ZT3, original team was null
+2016-01-02T20:14:34.800Z - info: [web-view-ctx.js] - webView0 shown
+2016-01-02T20:14:34.802Z - info: [teams-view-controller.js] - Primary team set to T02D63ZT3
+2016-01-02T20:14:34.815Z - info: [main.js] - Attached to DOM
+2016-01-02T20:14:34.825Z - info: [team-selector.coffee] - Rebuilding the clicked observable
+2016-01-02T20:14:34.836Z - info: [network-status.coffee] - Checking network connection to Slack...
+2016-01-02T20:14:35.624Z - info: [teams-view-controller.js] - Transitioning to online state
+2016-01-02T20:14:35.625Z - info: [teams-view-controller.js] - Presenting teams
+2016-01-02T20:14:35.630Z - info: [team-selector.coffee] - Rebuilding the clicked observable
+2016-01-02T20:14:37.287Z - warn: [theme-helpers.coffee] - Unable to load file:///usr/share/slack/resources/app.asar/static/undefined, falling back to team initials
+2016-01-02T20:14:48.149Z - warn: [theme-helpers.coffee] - Unable to load file:///usr/share/slack/resources/app.asar/static/undefined, falling back to team initials
+2016-01-03T11:09:52.348Z - info: [teams-view-controller.js] - Transitioning to offline state
+2016-01-03T11:09:52.349Z - info: [teams-view-controller.js] - Clearing primary team
+2016-01-03T11:09:52.350Z - info: [web-view-ctx.js] - webView0 hidden
+2016-01-03T11:09:52.352Z - warn: [loading-screen.js] - Showing Slack offline element
+2016-01-03T11:09:59.500Z - info: [network-status.coffee] - Checking network connection to Slack...
+2016-01-03T11:10:01.508Z - info: [teams-view-controller.js] - Updating! [{"id":"U02D63ZT7","name":"steve","team_id":"T02D63ZT3","team_name":"Proridium","team_url":"https://proridium.slack.com/"}]
+2016-01-03T11:10:01.508Z - info: [teams-view-controller.js] - Presenting teams
+2016-01-03T11:10:01.509Z - info: [teams-view-controller.js] - Going to change team to T02D63ZT3, original team was null
+2016-01-03T11:10:01.512Z - info: [web-view-ctx.js] - webView0 shown
+2016-01-03T11:10:01.513Z - info: [teams-view-controller.js] - Primary team set to T02D63ZT3
+2016-01-03T11:10:02.130Z - info: [network-status.coffee] - Checking network connection to Slack...
+2016-01-03T11:10:03.130Z - info: [teams-view-controller.js] - Transitioning to online state
+2016-01-03T11:10:03.130Z - info: [teams-view-controller.js] - Presenting teams
+2016-01-03T11:10:03.139Z - info: [team-selector.coffee] - Rebuilding the clicked observable
+2016-01-03T11:10:03.148Z - warn: [theme-helpers.coffee] - Unable to load file:///usr/share/slack/resources/app.asar/static/undefined, falling back to team initials
+2016-01-03T11:10:05.134Z - warn: [theme-helpers.coffee] - Unable to load file:///usr/share/slack/resources/app.asar/static/undefined, falling back to team initials

@@ -1,0 +1,29 @@
+2015-12-19T01:18:09.237Z - info: [local-storage.js] - Creating local storage instance at path: /home/steve-hartzog/.config/Slack/local-settings.json
+2015-12-19T01:18:09.239Z - error: [local-storage.js] - Couldn't load /home/steve-hartzog/.config/Slack/local-settings.json: ENOENT: no such file or directory, open '/home/steve-hartzog/.config/Slack/local-settings.json'
+2015-12-19T01:18:09.356Z - info: [slack-application.js] - Welcome to Slack 1.2.6 x64
+2015-12-19T01:18:09.357Z - info: [local-storage.js] - Creating local storage instance at path: /home/steve-hartzog/.config/Slack/local-settings.json
+2015-12-19T01:18:09.357Z - error: [local-storage.js] - Couldn't load /home/steve-hartzog/.config/Slack/local-settings.json: ENOENT: no such file or directory, open '/home/steve-hartzog/.config/Slack/local-settings.json'
+2015-12-19T01:18:09.357Z - info: [slack-application.js] - Hardware acceleration: true
+2015-12-19T01:18:09.357Z - info: [slack-application.js] - Auto-hide menu bar: false
+2015-12-19T01:18:09.362Z - info: [slack-window.js] - SlackWindow created, bootstrapping: /usr/share/slack/resources/app.asar/src/renderer/main.js
+2015-12-19T01:18:09.373Z - warn: [persist-settings-window-behavior.js] - SyntaxError: Unexpected token u, resetting null to default position
+2015-12-19T01:18:09.376Z - info: [slack-application.js] - Arguments passed to SlackApplication,
+      resourcePath: /usr/share/slack/resources/app.asar, version: 1.2.6
+2015-12-19T01:18:09.387Z - error: [native-interop.js] - Not implemented!!!!
+2015-12-19T01:18:09.388Z - info: [tray-handler.js] - About to load image: /usr/share/slack/resources/app.asar.unpacked/static/slack-taskbar-rest.png
+2015-12-19T01:18:09.390Z - info: [tray-handler.js] - Showing a tray balloon with title: Welcome to Slack!
+2015-12-19T01:18:09.390Z - info: [tray-handler.js] - About to load image: /usr/share/slack/resources/app.asar.unpacked/static/slack.png
+2015-12-19T01:18:09.395Z - info: [taskbar-handler.js] - Window will flash: idle
+2015-12-19T01:18:09.399Z - info: [main.js] - App load time: 388ms
+2015-12-19T01:18:09.402Z - warn: [slack-application.js] - No updater exists for this platform
+2015-12-19T01:18:10.095Z - info: [slack-application.js] - invokedOnStartup: false, runFromTray.isEnabled: true
+2015-12-19T01:18:10.098Z - info: [slack-application.js] - Migrating preferences: {"runFromTray":true,"useHwAcceleration":true,"windowFlashBehavior":"idle"}
+2015-12-19T01:22:14.779Z - info: [slack-application.js] - Want to load: emoji_2015_2_apple_64_indexed_256colors.png
+2015-12-19T01:22:19.839Z - info: [slack-application.js] - Want to load: emoji_2015_2_apple_64_indexed_256colors.png
+2015-12-19T01:22:24.780Z - info: [slack-appmenu.js] - Rebuilding team menu items
+2015-12-19T01:22:24.886Z - info: [slack-appmenu.js] - Rebuilding team menu items
+2015-12-19T01:23:34.239Z - info: [run-from-tray-window-behavior.js] - Attempted to close the window, hiding instead.
+2015-12-19T01:23:34.246Z - info: [tray-handler.js] - Showing a tray balloon with title: Looking for Slack?
+2015-12-19T01:23:34.246Z - info: [tray-handler.js] - About to load image: /usr/share/slack/resources/app.asar.unpacked/static/slack.png
+2015-12-19T01:23:34.254Z - info: [persist-settings-window-behavior.js] - Saving windowMetrics: {"size":[1114,845],"position":[164,102]}
+2015-12-19T01:23:34.255Z - info: [persist-settings-window-behavior.js] - Saving windowMetrics: {"size":[1114,845],"position":[164,102]}

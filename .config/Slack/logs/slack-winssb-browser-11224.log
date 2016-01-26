@@ -1,0 +1,27 @@
+2016-01-02T20:14:33.619Z - info: [local-storage.js] - Creating local storage instance at path: /home/steve-hartzog/.config/Slack/local-settings.json
+2016-01-02T20:14:33.817Z - info: [slack-application.js] - Welcome to Slack 1.2.6 x64
+2016-01-02T20:14:33.818Z - info: [local-storage.js] - Creating local storage instance at path: /home/steve-hartzog/.config/Slack/local-settings.json
+2016-01-02T20:14:33.818Z - info: [slack-application.js] - Hardware acceleration: true
+2016-01-02T20:14:33.818Z - info: [slack-application.js] - Auto-hide menu bar: false
+2016-01-02T20:14:33.824Z - info: [slack-window.js] - SlackWindow created, bootstrapping: /usr/share/slack/resources/app.asar/src/renderer/main.js
+2016-01-02T20:14:33.849Z - info: [reposition-window-behavior.js] - Window [164,102,1278,947] fits in display [0,0,1920,1080]? true
+2016-01-02T20:14:33.852Z - info: [slack-application.js] - Arguments passed to SlackApplication,
+      resourcePath: /usr/share/slack/resources/app.asar, version: 1.2.6
+2016-01-02T20:14:33.869Z - error: [native-interop.js] - Not implemented!!!!
+2016-01-02T20:14:33.871Z - info: [tray-handler.js] - About to load image: /usr/share/slack/resources/app.asar.unpacked/static/slack-taskbar-rest.png
+2016-01-02T20:14:33.875Z - info: [taskbar-handler.js] - Window will flash: idle
+2016-01-02T20:14:33.878Z - info: [main.js] - App load time: 615ms
+2016-01-02T20:14:33.882Z - warn: [slack-application.js] - No updater exists for this platform
+2016-01-02T20:14:34.862Z - info: [slack-application.js] - invokedOnStartup: false, runFromTray.isEnabled: true
+2016-01-02T20:14:35.740Z - info: [slack-appmenu.js] - Rebuilding team menu items
+2016-01-02T20:14:37.419Z - info: [slack-application.js] - Want to load: emoji_2015_2_apple_64_indexed_256colors.png
+2016-01-02T20:14:38.397Z - info: [run-from-tray-window-behavior.js] - Attempted to close the window, hiding instead.
+2016-01-02T20:14:38.398Z - info: [persist-settings-window-behavior.js] - Saving windowMetrics: {"size":[1114,845],"position":[164,130]}
+2016-01-02T20:14:38.399Z - info: [persist-settings-window-behavior.js] - Saving windowMetrics: {"size":[1114,845],"position":[164,130]}
+2016-01-02T20:14:43.335Z - info: [slack-application.js] - Want to load: emoji_2015_2_apple_64_indexed_256colors.png
+2016-01-03T11:18:12.466Z - info: [run-from-tray-window-behavior.js] - Attempted to close the window, hiding instead.
+2016-01-03T11:18:12.468Z - info: [persist-settings-window-behavior.js] - Saving windowMetrics: {"size":[1114,845],"position":[57,52]}
+2016-01-03T11:18:12.470Z - info: [persist-settings-window-behavior.js] - Saving windowMetrics: {"size":[1114,845],"position":[57,52]}
+2016-01-03T11:18:47.792Z - info: [run-from-tray-window-behavior.js] - Allowing window close because user chose to quit
+2016-01-03T11:18:47.792Z - info: [persist-settings-window-behavior.js] - Saving windowMetrics: {"size":[1114,845],"position":[57,-4]}
+2016-01-03T11:18:47.792Z - info: [persist-settings-window-behavior.js] - Saving windowMetrics: {"size":[1114,845],"position":[57,-4]}
